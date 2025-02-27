@@ -8,18 +8,25 @@
     <title>Kris' Portfolio</title>
     <link rel="icon" type="image/x-icon" href="src/Wrench.ico">
     <style>
+	h2 {
+            border-bottom: 4px solid #ececec	;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
         }
         header {
-            background-color: #333;
-            color: white;
+            background-color: #1e1e1e;
+            color: #ffffff;
             padding: 20px;
             font-size: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
         section {
             padding: 40px;
@@ -28,15 +35,15 @@
             animation: fadeIn 1s ease;
         }
         .skills, .projects, .contact, .resume {
-            background: white;
+            background: #1e1e1e; /* Dark card background */
             margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #1e1e1e;
+            color: #ffffff;
             padding: 10px;
             margin-top: 20px;
         }
@@ -45,6 +52,7 @@
             align-items: center;
             text-decoration: none;
             text-align: center;
+            color: #ffffff; /* White text for links */
         }
         .link-with-icon img {
             width: 32px;
@@ -58,24 +66,25 @@
         }
         img {
             border-radius: 8px;
-            max-width: 100%; /* Use 100% for better responsiveness */
+            max-width: 100%;
             height: auto;
         }
         video {
             width: 80%;
             height: auto;
+            border-radius: 10px; /* Round video corners */
         }
         .project-card {
-            background: white;
+            background: #2c2c2c; /* Darker card background */
             margin: 10px;
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -86,22 +95,42 @@
                 width: 90%;
                 margin: auto;
             }
-            .video-container iframe {
-                height: 200px; /* Adjust height for smaller screens */
-            }
         }
         .video-container {
             display: flex;
-            flex-direction: column; /* Stack vertically on small screens */
-            align-items: center; /* Center align the videos */
-            margin: 10px 0; /* Add some margin for spacing */
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
         }
         .video-container iframe {
-            width: 100%; /* Full width */
-            height: 315px; /* Fixed height for consistency */
-            max-width: 560px; /* Limit the maximum width */
-            margin-bottom: 10px; /* Space between videos */
+            width: 100%;
+            height: 315px; /* Normal height */
+            max-width: 560px;
+            margin-bottom: 10px;
         }
+        .skills ul, .projects, .contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills li, .projects li, .contact li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .skills .skill-label {
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+		
+        .expert { background-color: #28a745; }
+        .proficient { background-color: #007bff; }
+        .basic { background-color: #ffc107; }
+        .native { background-color: #dc3545; }
+		
     </style>
 </head>
 <body>
@@ -119,14 +148,29 @@
     <section class="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Lua (Roblox Scripting) - <strong>Expert</strong></li>
-            <li>C# (Unity Development) - <strong>Proficient</strong></li>
-            <li>Game Design - <strong>Proficient</strong></li>
+            <li class="skill-item">
+                <span class="skill-name">Lua (Roblox Scripting)</span>
+                <span class="skill-label expert">Expert</span>
+            </li>
+            <li class="skill-item">
+                <span class="skill-name">C# (Unity Development)</span>
+                <span class="skill-label proficient">Proficient</span>
+            </li>
+            <li class="skill-item">
+                <span class="skill-name">Game Design</span>
+                <span class="skill-label proficient">Proficient</span>
+            </li>
         </ul>
         <h3>Languages</h3>
         <ul>
-            <li>Thai - <strong>Native</strong></li>
-            <li>English - <strong>Proficient</strong></li>
+            <li class="skill-item">
+                <span class="skill-name">Thai</span>
+                <span class="skill-label native">Native</span>
+            </li>
+            <li class="skill-item">
+                <span class="skill-name">English</span>
+                <span class="skill-label proficient">Proficient</span>
+            </li>
         </ul>
     </section>
     
@@ -149,85 +193,94 @@
         </div>
         <h3>2023</h3>
         <div class="project-card">
-            <a href="https://v3.globalgamejam.org/2023/games/botania-9" class="link-with-icon">
-                <img src="src/Plant.png" alt="Botania Game Icon"><strong>Botania Game Jam (Programmer)</strong>
-            </a>
+		<div class="resume-links" style="display: flex; flex-direction: column; align-items: center;">
+			<a href="https://v3.globalgamejam.org/2023/games/botania-9" class="link-with-icon" style="margin-bottom: 15px; display: flex; align-items: center; background: rgba(255, 255, 255, 0.2); padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; margin-top: 10px; transition: background 0.3s;">
+				<img src="src/Plant.png" alt="Botania Game Icon" style="width: 32px; height: 32px; margin-right: 10px;">
+				<strong style="font-size: 1.2rem;">Botania Game Jam (Programmer)</strong>
+			</a>
+		</div>
             <img src="src/Botania.png" alt="Botania Game Thumbnail">
         </div>
         <div class="project-card">
             <h4>Grab Snake (Programmer)</h4>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/opr9ahriBEM" title="Grab Snake Video" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/opr9ahriBEM" title="Grab Snake Video" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="project-card">
             <h4>Stardog (Programmer)</h4>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/crLQSpMTH84" title="Stardog Video" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/crLQSpMTH84" title="Stardog Video" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 		
-	<section class="projects">
-		<h2>Roblox Projects</h2>
-		<div class="project-card">
-			<h4>Example Lua Coding</h4>
-			<img src="src/Roblox/Code.png" alt="Lua code example">
-		</div>
-		<div class="project-card">
-			<h3>Sneak Peek of Projects I've Worked On</h3>
-			<div class="video-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; justify-items: center;">
-				<video autoplay loop muted style="max-width: 100%;">
-					<source src="src/Roblox/Combo.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-				<video autoplay loop muted style="max-width: 100%;">
-					<source src="src/Roblox/Noodle.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-				<video autoplay loop muted style="max-width: 100%;">
-					<source src="src/Roblox/Tiles.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-				<video autoplay loop muted style="max-width: 100%;">
-					<source src="src/Roblox/Ping.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-				<video autoplay loop muted style="max-width: 100%;">
-					<source src="src/Roblox/Parkour.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-			</div>
-		</div>
-		<div class="project-card">
-			<h3>Dev Logs</h3>
-			<div class="video-container">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/IVEZEEXQsUE" title="Dev Log 1" frameborder="0" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/HAqgaY-bBAc" title="Dev Log 2" frameborder="0" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/UvXQMUL8sdk" title="Dev Log 3" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-	</section>
-    
+    <section class="projects">
+        <h2>Roblox Projects</h2>
+        <div class="project-card">
+            <h4>Example Lua Coding</h4>
+            <img src="src/Roblox/Code.png" alt="Lua code example">
+        </div>
+        <div class="project-card">
+            <h3>Sneak Peek of Projects I've Worked On</h3>
+            <div class="video-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; justify-items: center;">
+                <video autoplay loop muted style="max-width: 100%;">
+                    <source src="src/Roblox/Combo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted style="max-width: 100%;">
+                    <source src="src/Roblox/Noodle.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted style="max-width: 100%;">
+                    <source src="src/Roblox/Tiles.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted style="max-width: 100%;">
+                    <source src="src/Roblox/Ping.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted style="max-width: 100%;">
+                    <source src="src/Roblox/Parkour.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="project-card">
+        <h3>Dev Logs</h3>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/IVEZEEXQsUE" title="Dev Log 1" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/HAqgaY-bBAc" title="Dev Log 2" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/UvXQMUL8sdk" title="Dev Log 3" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
     <section class="resume">
         <h2>Resumes</h2>
-        <a href="https://www.canva.com/design/DAGakyPZb0U/w_oz6X9Ex-X2-BU8kgfUeQ/edit" class="link-with-icon">
-            <img src="src/Paper.png" alt="Resume Icon">Resume
-        </a>
-        <a href="https://devforum.roblox.com/t/closed-experienced-scripter-ready-to-be-hired-again/323947" class="link-with-icon">
-            <img src="src/ROBLOX_Studio_icon.png" alt="Roblox Portfolio Icon">Roblox Portfolio
-        </a>
+        <div class="resume-links" style="display: flex; flex-direction: column; align-items: center;">
+			<a href="https://www.canva.com/design/DAGakyPZb0U/w_oz6X9Ex-X2-BU8kgfUeQ/edit" class="link-with-icon" style="display: flex; align-items: center; background: rgba(255, 255, 255, 0.2); padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; transition: background 0.3s;">
+				<img src="src/Paper.png" alt="Resume Icon" style="width: 32px; height: 32px; margin-right: 10px;">
+				<strong style="font-size: 1.2rem;">Resume</strong>
+			</a>
+			<a href="https://devforum.roblox.com/t/closed-experienced-scripter-ready-to-be-hired-again/323947" class="link-with-icon" style="display: flex; align-items: center; background: rgba(255, 255, 255, 0.2); padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; margin-top: 10px; transition: background 0.3s;">
+				<img src="src/ROBLOX_Studio_icon.png" alt="Roblox Portfolio Icon" style="width: 32px; height: 32px; margin-right: 10px;">
+				<strong style="font-size: 1.2rem;">Roblox Portfolio</strong>
+			</a>
+		</div>
     </section>
-    
+
     <section class="contact">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:christangth@gmail.com">christangth@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/christang3" target="_blank">https://github.com/christang3</a></p>
-        <p>Phone: 099-514-9258</p>
+        <ul>
+            <li>Email: <a href="mailto:christangth@gmail.com" style="color: #007BFF;">christangth@gmail.com</a></li>
+            <li>GitHub: <a href="https://github.com/christang3" target="_blank" style="color: #007BFF;">https://github.com/christang3</a></li>
+            <li>Phone: 099-514-9258</li>
+        </ul>
     </section>
-    
+
     <footer>
         <p>&copy; 2025 Kris. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
+
