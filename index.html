@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Kris' portfolio showcasing programming skills and game design projects.">
     <title>Kris' Portfolio</title>
 	 <link rel="icon" type="image/x-icon" href="src/Wrench.ico">
     <style>
@@ -55,6 +56,30 @@
             max-width: 50%; /* Responsive design */
             height: auto; /* Maintain aspect ratio */
         }
+		
+		 .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 90%;
+        }
+		
+		.link-with-icon:hover {
+			color: #007BFF; /* Change to your desired hover color */
+		}
+		
+		video {
+			width: 80%;
+			height: auto;
+		}
     </style>
 </head>
 <body>
@@ -109,32 +134,34 @@
 		<h4>Example Lua Coding</h4>
 		<img src="src/Roblox/Code.png" alt="Code">
 		<h3>Sneak Peak of Projects I've worked with</h3>
-		<video width="320" height="180" controls>
-			<source src="src/Roblox/Combo.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<video width="320" height="180" controls>
-			<source src="src/Roblox/Noodle.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<video width="320" height="180" controls>
-			<source src="src/Roblox/Tiles.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<video width="320" height="180" controls>
-			<source src="src/Roblox/Ping.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<video width="320" height="180" controls>
-			<source src="src/Roblox/Parkour.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
+		
+			<video width="320" height="180" controls>
+				<source src="src/Roblox/Combo.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<video width="320" height="180" controls>
+				<source src="src/Roblox/Noodle.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<video width="320" height="180" controls>
+				<source src="src/Roblox/Tiles.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<video width="320" height="180" controls>
+				<source src="src/Roblox/Ping.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<video width="320" height="180" controls>
+				<source src="src/Roblox/Parkour.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		
 		<h3>Dev Logs</h3>
-			<iframe max-width: 100% width="560" height="315" src="https://www.youtube.com/embed/IVEZEEXQsUE" 
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/IVEZEEXQsUE" 
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe max-width: 100% width="560" height="315" src="https://www.youtube.com/embed/HAqgaY-bBAc" 
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/HAqgaY-bBAc" 
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe max-width: 100% width="560" height="315" src="https://www.youtube.com/embed/UvXQMUL8sdk" 
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/UvXQMUL8sdk" 
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 	
@@ -150,10 +177,19 @@
     
     <section class="contact">
         <h2>Contact</h2>
-        <p>Email: christangth@gmail.com</p>
-        <p>GitHub: https://github.com/christang3</p>
+        <p>Email: <a href="mailto:christangth@gmail.com">christangth@gmail.com</a></p>
+		<p>GitHub: <a href="https://github.com/christang3" target="_blank">https://github.com/christang3</a></p>
 		<p>Phone: 099-514-9258</p>
     </section>
+	
+	 <script>
+        document.querySelectorAll("iframe").forEach(video => {
+            let wrapper = document.createElement("div");
+            wrapper.className = "video-container";
+            video.parentNode.insertBefore(wrapper, video);
+            wrapper.appendChild(video);
+        });
+    </script>
     
     <footer>
         <p>&copy; 2025 Kris. All Rights Reserved.</p>
