@@ -86,6 +86,21 @@
                 width: 90%;
                 margin: auto;
             }
+            .video-container iframe {
+                height: 200px; /* Adjust height for smaller screens */
+            }
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column; /* Stack vertically on small screens */
+            align-items: center; /* Center align the videos */
+            margin: 10px 0; /* Add some margin for spacing */
+        }
+        .video-container iframe {
+            width: 100%; /* Full width */
+            height: 315px; /* Fixed height for consistency */
+            max-width: 560px; /* Limit the maximum width */
+            margin-bottom: 10px; /* Space between videos */
         }
     </style>
 </head>
@@ -141,11 +156,15 @@
         </div>
         <div class="project-card">
             <h4>Grab Snake (Programmer)</h4>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/opr9ahriBEM" title="Grab Snake Video" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/opr9ahriBEM" title="Grab Snake Video" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
         <div class="project-card">
             <h4>Stardog (Programmer)</h4>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/crLQSpMTH84" title="Stardog Video" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/crLQSpMTH84" title="Stardog Video" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
     
@@ -157,32 +176,36 @@
         </div>
         <div class="project-card">
             <h3>Sneak Peek of Projects I've Worked On</h3>
-            <video controls>
-                <source src="src/Roblox/Combo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="src/Roblox/Noodle.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="src/Roblox/Tiles.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="src/Roblox/Ping.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="src/Roblox/Parkour.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-container">
+                <video controls>
+                    <source src="src/Roblox/Combo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="src/Roblox/Noodle.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="src/Roblox/Tiles.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="src/Roblox/Ping.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="src/Roblox/Parkour.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
         <div class="project-card">
             <h3>Dev Logs</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/IVEZEEXQsUE" title="Dev Log 1" frameborder="0" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/HAqgaY-bBAc" title="Dev Log 2" frameborder="0" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/UvXQMUL8sdk" title="Dev Log 3" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IVEZEEXQsUE" title="Dev Log 1" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HAqgaY-bBAc" title="Dev Log 2" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UvXQMUL8sdk" title="Dev Log 3" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
     
