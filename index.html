@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Kris' portfolio showcasing programming skills and game design projects.">
+    <meta name="description" content="Kris' portfolio showcasing programming skills and game design projects.">
     <title>Kris' Portfolio</title>
-	 <link rel="icon" type="image/x-icon" href="src/Wrench.ico">
+    <link rel="icon" type="image/x-icon" href="src/Wrench.ico">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -24,6 +25,7 @@
             padding: 40px;
             max-width: 800px;
             margin: auto;
+            animation: fadeIn 1s ease;
         }
         .skills, .projects, .contact, .resume {
             background: white;
@@ -38,48 +40,53 @@
             padding: 10px;
             margin-top: 20px;
         }
-		.link-with-icon {
-			display: block;
-			align-items: center;
-			text-decoration: none;
-			text-align: center;
-		}
-
-		.link-with-icon img {
-			width: 32px;
-			height: 32px;
-			margin-right: 5px; /* Adds space between image and text */
-		}
-		
-		 img {
-            border-radius: 8px; /* Rounded corners */
-            max-width: 50%; /* Responsive design */
-            height: auto; /* Maintain aspect ratio */
+        .link-with-icon {
+            display: block;
+            align-items: center;
+            text-decoration: none;
+            text-align: center;
         }
-		
-		 .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-            height: 0;
+        .link-with-icon img {
+            width: 32px;
+            height: 32px;
+            margin-right: 5px;
         }
-
-        .video-container iframe {
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            width: 90%;
-            height: 90%;
+        .link-with-icon:hover {
+            color: #007BFF;
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
         }
-		
-		.link-with-icon:hover {
-			color: #007BFF; /* Change to your desired hover color */
-		}
-		
-		video {
-			width: 80%;
-			height: auto;
-		}
+        img {
+            border-radius: 8px;
+            max-width: 100%; /* Use 100% for better responsiveness */
+            height: auto;
+        }
+        video {
+            width: 80%;
+            height: auto;
+        }
+        .project-card {
+            background: white;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .project-card {
+                width: 90%;
+                margin: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -90,6 +97,7 @@
     
     <section class="about">
         <h2>About Me</h2>
+        <img src="src/profile.png" alt="Kris' Profile Picture" style="border-radius: 50%; width: 150px;">
         <p>A visionary programmer and game designer, passionate about crafting innovative mechanics and immersive experiences. Dedicated to enhancing gameplay through seamless quality-of-life improvements and boundless creativity.</p>
     </section>
     
@@ -99,97 +107,101 @@
             <li>Lua (Roblox Scripting) - <strong>Expert</strong></li>
             <li>C# (Unity Development) - <strong>Proficient</strong></li>
             <li>Game Design - <strong>Proficient</strong></li>
-		 </ul>
-			<h3>Language</h3>
-		<ul>
-			<li>Thai - <strong>Native</strong></li>
-			<li>English - <strong>Proficient</strong></li>
+        </ul>
+        <h3>Languages</h3>
+        <ul>
+            <li>Thai - <strong>Native</strong></li>
+            <li>English - <strong>Proficient</strong></li>
         </ul>
     </section>
-	
+    
     <section class="projects">
         <h2>Unity Projects</h2>
-		<h3>2024</h3>
-        <h4>Felix The Cat Remake (Programmer)</h4>
-		<video width="640" height="360" controls>
-			<source src="src/Vids/felixthecatremake.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<h4>Insanity Trailer (Programmer)</h4>
-		<video width="640" height="360" controls>
-			<source src="src/Vids/Isanity_Trailer.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<h3>2023</h3>
-		<a href="https://v3.globalgamejam.org/2023/games/botania-9" class="link-with-icon">
-		<img src="src/Plant.png" alt="Icon">Botania Game Jam (Programmer)
-		</a>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/opr9ahriBEM" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/crLQSpMTH84" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h3>2024</h3>
+        <div class="project-card">
+            <h4>Insanity Trailer (Programmer)</h4>
+            <video controls>
+                <source src="src/Vids/Insanity_Trailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="project-card">
+            <h4>Felix The Cat Remake (Programmer)</h4>
+            <video controls>
+                <source src="src/Vids/felixthecatremake.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3>2023</h3>
+        <div class="project-card">
+            <a href="https://v3.globalgamejam.org/2023/games/botania-9" class="link-with-icon">
+                <img src="src/Plant.png" alt="Botania Game Icon"><strong>Botania Game Jam (Programmer)</strong>
+            </a>
+            <img src="src/Botania.png" alt="Botania Game Thumbnail">
+        </div>
+        <div class="project-card">
+            <h4>Grab Snake (Programmer)</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/opr9ahriBEM" title="Grab Snake Video" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="project-card">
+            <h4>Stardog (Programmer)</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/crLQSpMTH84" title="Stardog Video" frameborder="0" allowfullscreen></iframe>
+        </div>
     </section>
-	<section class="projects">
+    
+    <section class="projects">
         <h2>Roblox Projects</h2>
-		<h4>Example Lua Coding</h4>
-		<img src="src/Roblox/Code.png" alt="Lua code example">
-		<h3>Sneak Peak of Projects I've worked with</h3>
-		
-			<video width="320" height="180" controls>
-				<source src="src/Roblox/Combo.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-			<video width="320" height="180" controls>
-				<source src="src/Roblox/Noodle.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-			<video width="320" height="180" controls>
-				<source src="src/Roblox/Tiles.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-			<video width="320" height="180" controls>
-				<source src="src/Roblox/Ping.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-			<video width="320" height="180" controls>
-				<source src="src/Roblox/Parkour.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-		
-		<h3>Dev Logs</h3>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/IVEZEEXQsUE" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/HAqgaY-bBAc" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/UvXQMUL8sdk" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="project-card">
+            <h4>Example Lua Coding</h4>
+            <img src="src/Roblox/Code.png" alt="Lua code example">
+        </div>
+        <div class="project-card">
+            <h3>Sneak Peek of Projects I've Worked On</h3>
+            <video controls>
+                <source src="src/Roblox/Combo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="src/Roblox/Noodle.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="src/Roblox/Tiles.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="src/Roblox/Ping.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="src/Roblox/Parkour.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="project-card">
+            <h3>Dev Logs</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IVEZEEXQsUE" title="Dev Log 1" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HAqgaY-bBAc" title="Dev Log 2" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UvXQMUL8sdk" title="Dev Log 3" frameborder="0" allowfullscreen></iframe>
+        </div>
     </section>
-	
-	<section class="resume">
-	<h2>Resumes</h2>
-		<a href="https://www.canva.com/design/DAGakyPZb0U/w_oz6X9Ex-X2-BU8kgfUeQ/edit" class="link-with-icon">
-		<img src="src/Paper.png" alt="Icon">Resume
-		</a>
-		<a href="https://devforum.roblox.com/t/closed-experienced-scripter-ready-to-be-hired-again/323947" class="link-with-icon">
-		<img src="src/ROBLOX_Studio_icon.png" alt="Icon">Roblox Portfolio
-		</a>
-	</section>
+    
+    <section class="resume">
+        <h2>Resumes</h2>
+        <a href="https://www.canva.com/design/DAGakyPZb0U/w_oz6X9Ex-X2-BU8kgfUeQ/edit" class="link-with-icon">
+            <img src="src/Paper.png" alt="Resume Icon">Resume
+        </a>
+        <a href="https://devforum.roblox.com/t/closed-experienced-scripter-ready-to-be-hired-again/323947" class="link-with-icon">
+            <img src="src/ROBLOX_Studio_icon.png" alt="Roblox Portfolio Icon">Roblox Portfolio
+        </a>
+    </section>
     
     <section class="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:christangth@gmail.com">christangth@gmail.com</a></p>
-		<p>GitHub: <a href="https://github.com/christang3" target="_blank">https://github.com/christang3</a></p>
-		<p>Phone: 099-514-9258</p>
+        <p>GitHub: <a href="https://github.com/christang3" target="_blank">https://github.com/christang3</a></p>
+        <p>Phone: 099-514-9258</p>
     </section>
-	
-	 <script>
-        document.querySelectorAll("iframe").forEach(video => {
-            let wrapper = document.createElement("div");
-            wrapper.className = "video-container";
-            video.parentNode.insertBefore(wrapper, video);
-            wrapper.appendChild(video);
-        });
-    </script>
     
     <footer>
         <p>&copy; 2025 Kris. All Rights Reserved.</p>
